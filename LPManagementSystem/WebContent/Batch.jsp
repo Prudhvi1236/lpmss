@@ -17,19 +17,19 @@
 <table align="center">
 <tr>
 <td>BatchId</td>
-<td><input type="text" name="batchid" /></td>
+<td><input type="text" name="batchid" required="required" placeholder="Enter batch id"/></td>
 </tr>
 <tr>
 <td>BatchCourse</td>
-<td><input type="text" name="batchcourse" /></td>
+<td><input type="text" name="batchcourse" required="required" placeholder="Enter batch couse"/></td>
 </tr>
 <tr>
 <td>MentorId</td>
-<td><input type="text" name="eid" /></td>
+<td><input type="text" name="eid" required="required" placeholder="Enter mentor id"/></td>
 </tr>
 <tr>
 <td>BatchCapacity</td>
-<td><input type="text" name="batchcapacity" /></td>
+<td><input type="text" name="batchcapacity" required="required" placeholder="Enter batch capacity"/></td>
 <tr>
 
 <tr>

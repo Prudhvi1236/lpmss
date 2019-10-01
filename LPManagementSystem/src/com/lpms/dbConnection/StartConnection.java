@@ -5,14 +5,14 @@ public class StartConnection {
 public static Connection createConnection()
 {
 Connection con = null;
-String url = "jdbc:oracle:thin:@localhost:1521:xe"; 
-String username = "system"; 
-String password = "manager";//oracle password
+String url = "jdbc:mysql://localhost:3306/lpbms"; 
+String username = "root"; 
+String password = "system";//oracle password
 try 
 {
 try 
 {
-Class.forName("oracle.jdbc.driver.OracleDriver"); //loading oracle driver 
+Class.forName("com.mysql.jdbc.Driver"); //loading oracle driver 
 } 
 catch (ClassNotFoundException e)
 {

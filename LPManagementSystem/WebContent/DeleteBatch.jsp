@@ -15,12 +15,12 @@
 <tr>
 
 <td>BatchId</td>
-<td><input type="text" name="batchid" /></td>
+<td><input type="text" name="batchid" required="required" placeholder="Enter batch id"/></td>
 </tr>
 <tr>
 <tr>
 <td>MentorId</td>
-<td><input type="text" name="eId" /></td>
+<td><input type="text" name="eId" required="required" placeholder="Enter mentor id"/></td>
 </tr>
 <tr>
 <td><%=(request.getAttribute("errMessage") == null) ? ""

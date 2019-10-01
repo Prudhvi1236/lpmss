@@ -16,19 +16,19 @@
 <table align="center">
 <tr>
 <td>ModuleId</td>
-<td><input type="text" name="moid" /></td>
+<td><input type="text" name="moid" required="required" placeholder="Enter module id"/></td>
 </tr>
 <tr>
 <td>ModuleName</td>
-<td><input type="text" name="modulename" /></td>
+<td><input type="text" name="modulename" required="required" placeholder="Enter module"/></td>
 </tr>
 <tr>
 <td>Date</td>
-<td><input type="text" name="date" /></td>
+<td><input type="date" name="date" required="required" placeholder="dd/mm/yyyy"/></td>
 </tr>
 <tr>
 <td>BatchId</td>
-<td><input type="text" name="batchid" /></td>
+<td><input type="text" name="batchid" required="required" placeholder="Enter batch id"/></td>
 </tr>
 <tr>
 <td><%=(request.getAttribute("errMessage") == null) ? ""
@@ -36,8 +36,8 @@
 </tr>
 <tr>
 <td></td>
-<td><input type="submit" value="Register"></input><input
-type="reset" value="Reset"></input></td>
+<td><input type="submit" value="Register"></input>
+<input type="reset" value="Reset"></input></td>
 </tr>
 </table>
 </form>

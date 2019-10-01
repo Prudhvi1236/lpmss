@@ -13,19 +13,19 @@
 <h3 align="center">Add Venue</h3>
 </div>
 
-<form name="venueRegistration" action="AddVenue" method="post" onsubmit="return validate()">
+<form name="venueRegistration" action="AddVenue" method="post" ">
 <table align="center">
 <tr>
 <td>VenueId</td>
-<td><input type="text" name="venueid" /></td>
+<td><input type="text" name="venueid" required="required" placeholder="Enter venue id"/></td>
 </tr>
 <tr>
 <td>Address</td>
-<td><input type="text" name="venueaddress" /></td>
+<td><input type="text" name="venueaddress" required="required" placeholder="Enter address"/></td>
 </tr>
 <tr>
 <td>Capacity</td>
-<td><input type="text" name="capacity" /></td>
+<td><input type="text" name="capacity" required="required" placeholder="Enter capacity"/></td>
 </tr>
 <tr>
 <td></td>
