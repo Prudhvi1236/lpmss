@@ -41,10 +41,10 @@ public class LoginServlet extends HttpServlet{
 			HttpSession session= request.getSession();
 			session.setAttribute("eId",eid);
 			
-			AdminService adminservice= new AdminServiceImp();
-			List<Venue> list=adminservice.viewVenue();
-			request.setAttribute("list", list);
-			log.trace("venue from db:"+list);
+			//AdminService adminservice= new AdminServiceImp();
+			//List<Venue> list=adminservice.viewVenue();
+			//request.setAttribute("list", list);
+			//log.trace("venue from db:"+list);
 			
 			request.getRequestDispatcher("/AdminHome.jsp").forward(request, response);
 		}
