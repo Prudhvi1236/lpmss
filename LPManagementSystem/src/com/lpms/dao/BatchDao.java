@@ -11,13 +11,13 @@ public interface BatchDao
 {
 	public String addBatch(Batch b);
 
-	public Batch allocateVenue(Batch b);
+	public String allocateVenue(Batch b);
 	List <Batch> getBatchRecords();
 	List <Batch> getNotAllocBatchRecords();
 	public String batchRecords(Batch b);
 	Batch findByBatchId(String batchId);
 	Batch findByMentorId(String mentorId);
-	public Batch deleteBatch(Batch b);
+	public boolean deleteBatch(Batch b);
 
 	Batch findByMenId(String eId);
 	

@@ -46,15 +46,16 @@ public class GetBatchRecords extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("<h1>Batch Records</h1>");
 		AdminService as = new AdminServiceImp();
-		List<Batch> list= as. getBatchRecords();
+		List<Batch> list= as.getBatchRecords();
 		
 		out.println("<table border='1' width='80%'>");
-		out.println("<tr><th>BatchId</th><th>BatchCourse</th><th>MentorId</th><th>VenueId</th><th>capacity</th></tr>");
+		out.println("<tr><th>BatchId</th><th>BatchCourse</th><th>capacity</th><th>MentorId</th></tr>");
 		for(Batch b1:list)
 		{
-			out.println("<tr><td>"+b1.getBatchId()+"</td><td>"+b1.getBatchCourse()+"</td><td>"+b1.geteId()+"</td><td>"+b1.getVenueId()+"</td><td>"+b1.getBatchCapacity()+"</td></tr>");
+			out.println("<tr><td>"+b1.getBatchId()+"</td><td>"+b1.getBatchCourse()+"</td><td>"+b1.geteId()+"</td><td>"+b1.getBatchCapacity()+"</td></tr>");
 		}
 		out.println("</table>");
+		out.println("<a href='" + getServletContext().getContextPath() + "/AdminHome.jsp'>Home</a>");
 		out.close();
 	}
 

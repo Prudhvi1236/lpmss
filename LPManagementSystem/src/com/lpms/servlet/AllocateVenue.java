@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.lpms.model.Batch;
 import com.lpms.service.AdminService;
@@ -39,6 +40,7 @@ public class AllocateVenue extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
 		String batchid=request.getParameter("batchid");
 		int venueid=Integer.parseInt(request.getParameter("venueid"));
 
@@ -46,10 +48,22 @@ public class AllocateVenue extends HttpServlet {
           batchbean.setBatchId(batchid);
           batchbean.setVenueId(venueid);
           AdminService adminser = new AdminServiceImp();
-    	 adminser.allocateVenue(batchbean);
-        
- 		request.getRequestDispatcher("/AllocateVenue.jsp").forward(request, response);
+    	String b= adminser.allocateVenue(batchbean);
+    	
+    	if(b.equals("successfully done...."))   //On success, you can display a message to user on Home page
+		{
+		request.setAttribute("Message", b);
+		request.getRequestDispatcher("/AllocateVenue.jsp").forward(request, response);	
+		}
+		else   //On Failure, display a meaningful message to the User.
+		{
+		request.setAttribute("Message", b);
+		request.getRequestDispatcher("/AllocateVenue.jsp").forward(request, response);	
+		}
  		
+ 		
+    	
+    	
  	
 
 		

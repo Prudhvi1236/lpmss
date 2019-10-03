@@ -59,6 +59,8 @@ public class ViewVenue extends HttpServlet {
 			//System.out.println(batch.getVenue().getVenueAddress());
 		
 		out.println("</table>");
+		out.print("<br>");
+		out.println("<a href='" + getServletContext().getContextPath() + "/LPHome.jsp'>Home</a>"); 
 		out.close();
 
 		

@@ -22,7 +22,7 @@ response.setHeader("Expries", "0");
 <style>
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #333;
+  background-color: #2874A6;
   overflow: hidden;
 }
 
@@ -61,9 +61,8 @@ response.setHeader("Expries", "0");
 <body>
 <h1 align="center">LP Management System</h1>
  
- <hr>
 <div class="topnav">
-  <a class="active" href="index.jsp">Home</a>
+  
   <a href="AddLP.jsp">Add LP</a>
   <a href="Batch.jsp">Create Batch</a>
   <a href="<%=request.getContextPath() %>/ViewBatch">View Batch</a>
@@ -72,6 +71,7 @@ response.setHeader("Expries", "0");
   <a href="DeleteBatch.jsp">Delete batch</a>
   <a href="Logout">Logout</a>
 </div>
+<br>
 
 <div class= "welcome">
 <h2>welcome Mentor!!</h2>

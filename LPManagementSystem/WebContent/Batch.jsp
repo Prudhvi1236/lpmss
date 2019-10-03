@@ -5,44 +5,84 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Create Batch</title>
+<style type="text/css">
+.wrapper {
+	text-align: center;
+}
+
+h3 {
+	color: black;
+}
+.status{
+text-align:center;
+color:red;
+font-size:25px;
+
+}
+</style>
 </head>
 <body>
 
-<body>
+<body bgcolor="#afafaf">
 <div class=heading>
 <h3 align="center">Create Batch</h3>
 </div>
+<script>
+		function validateForm() {
+			var batchid = document.BatchRegistration.batchid.value;
+			var batchcourse = document.BatchRegistration.batchcourse.value;
+			var eid = document.BatchRegistration.eid.value;
+			var batchcapacity = document.BatchRegistration.batchcapacity.value;
+			
+			if (batchid == "" || batchid == null) {
+				alert("batch id can't be blank");
+				return false;
+			} else if (batchcourse == null || batchcourse == "") {
+				alert("batch course can't be blank");
+				return false;
+			} else if (eid == null || eid == "") {
+				alert("mentor id can't be blank");
+				return false;
+			} else if (batchcapacity == null || batchcapacity == "") {
+				alert("batch capacity can't be blank");
+				return false;
+			} 
 
-<form name="BatchRegistration" action="AddBatch" method="post" onsubmit="return validate()">
+		}
+	</script>
+<form name="BatchRegistration" action="AddBatch" method="post" onsubmit="return validateForm()">
 <table align="center">
 <tr>
 <td>BatchId</td>
-<td><input type="text" name="batchid" required="required" placeholder="Enter batch id"/></td>
+<td><input type="text" name="batchid"  placeholder="Enter batch id"/></td>
 </tr>
 <tr>
 <td>BatchCourse</td>
-<td><input type="text" name="batchcourse" required="required" placeholder="Enter batch couse"/></td>
+<td><input type="text" name="batchcourse"  placeholder="Enter batch couse"/></td>
 </tr>
 <tr>
 <td>MentorId</td>
-<td><input type="text" name="eid" required="required" placeholder="Enter mentor id"/></td>
+<td><input type="text" name="eid"  placeholder="Enter mentor id"/></td>
 </tr>
 <tr>
 <td>BatchCapacity</td>
-<td><input type="text" name="batchcapacity" required="required" placeholder="Enter batch capacity"/></td>
+<td><input type="text" name="batchcapacity"  placeholder="Enter batch capacity"/></td>
 <tr>
-
-<tr>
-<td><%=(request.getAttribute("errMessage") == null) ? ""
-: request.getAttribute("errMessage")%></td>
-</tr>
 <tr>
 <td></td>
 <td><input type="submit" value="Register"></input><input type="reset" value="Reset"/></td>
 </tr>
 </table>
+<br>
+		<div class="status">
+			<%
+				if (request.getAttribute("Message") != null)
+					out.print(request.getAttribute("Message"));
+			%>
+		</div>
 </form>
-
-
+<div class="wrapper">
+		<a href="MentorHome.jsp"><button type="button">Home</button></a>
+	</div>
 </body>
 </html>

@@ -13,7 +13,7 @@ public interface MentorService
 	String validateMentorLogin(Mentor m);
 	String batchRecords(Batch b);
 	public Batch findByMentorId(String mentorId);
-	public Batch deleteBatch(Batch b) ;
+	public boolean deleteBatch(Batch b) ;
 	public Mentor findById(String eId);
 	public Batch findByMenId(String eId);
 }

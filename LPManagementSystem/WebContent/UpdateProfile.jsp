@@ -9,8 +9,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Update Profile</title>
+<style type="text/css">
+.wrapper {
+	text-align: center;
+}
+
+</style>
 </head>
-<body>
+<body bgcolor="#afafaf">
 <%LP l=new LP();
 LPServiceImp lpi=new LPServiceImp();
 String eId=request.getParameter("eId");
@@ -18,7 +24,7 @@ LP l2=lpi.findById(eId);
 
 request.getAttribute("employee"); %>
 <form name="emp" action="UpdateProfile" method="post">
-        <table align="center" width=40% width="100%" cellspacing="2" cellpadding="2" border="5">
+        <table  bgcolor="white"align="center" width=40% cellspacing="2" cellpadding="2" border="5" >
         
             <tr>
                 <td colspan="2" align="center"><b>Update Profile</b></td>
@@ -28,6 +34,7 @@ request.getAttribute("employee"); %>
             	<td>
             	<input type="hidden" name="eId" value="<%= l2.geteId() %>">
           	  </td>
+          	  <td></td>
             </tr>
 			<tr>
                 <td align="left" valign="top" width="41%">Employee name<span style="color:red"></span></td>
@@ -61,5 +68,10 @@ request.getAttribute("employee"); %>
 	
 </table>
 </form>
+<br>
+<div class="wrapper">
+		<a href="LPHome.jsp"><button type="button">Home</button></a>
+	</div>
+
 </body>
 </html>

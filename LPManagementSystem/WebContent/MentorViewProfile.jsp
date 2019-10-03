@@ -8,10 +8,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>View Profile</title>
+<style type="text/css">
+.wrapper {
+	text-align: center;
+}
+
+</style>
 </head>
 <body>
+<h2 align="center">Profile</h2>
 <!-- <form action="UpdateProfile.jsp" method="get"> -->
-<table width="100%" height="536" border="0">
+<table width="70%" height="536" border="1" align="center">
 <%request.getAttribute("employee"); %>
   <tr>
     <th width="25%" scope="col">Employee Id </th>
@@ -37,7 +44,10 @@
   </tr>
 </table> 
  
-
+<br>
+	<div class="wrapper">
+		<a href="MentorHome.jsp"><button type="button">Home</button></a>
+	</div>
 <!-- </form> -->
 
 </body>

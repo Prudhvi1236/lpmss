@@ -5,22 +5,51 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>delete batch</title>
+<style type="text/css">
+.wrapper {
+	text-align: center;
+}
+
+h3 {
+	color: black;
+}
+.status{
+text-align:center;
+color:red;
+font-size:25px;
+
+}
+</style>
 </head>
-<body>
+<body bgcolor="#afafaf">
 
 <h3 align="center">Delete Batch</h3>
+<script>
+		function validateForm() {
+			var batchid = document.deletebatch.batchid.value;
+			var eId = document.deletebatch.eId.value;
+					
+			if (batchid == "" || batchid == null) {
+				alert("batch id can't be blank");
+				return false;
+			} else if (eId == null || eId == "") {
+				alert(" mentor id can't be blank");
+				return false;
+			}
 
-<form name="deletebatch" action="DeleteBatch" method="post" >
+		}
+	</script>
+<form name="deletebatch" action="DeleteBatch" method="post" onsubmit="return validateForm()">
 <table align="center">
 <tr>
 
 <td>BatchId</td>
-<td><input type="text" name="batchid" required="required" placeholder="Enter batch id"/></td>
+<td><input type="text" name="batchid"  placeholder="Enter batch id"/></td>
 </tr>
 <tr>
 <tr>
 <td>MentorId</td>
-<td><input type="text" name="eId" required="required" placeholder="Enter mentor id"/></td>
+<td><input type="text" name="eId"  placeholder="Enter mentor id"/></td>
 </tr>
 <tr>
 <td><%=(request.getAttribute("errMessage") == null) ? ""
@@ -28,12 +57,23 @@
 </tr>
 <tr>
 <td></td>
-<td><input type="submit" value="Delete"></input><input type="reset" value="Reset"/></td>
+<td><input type="submit" value="Delete">
+<input type="reset" value="Reset"></td>
 </tr>
- 
 </table>
-</form>
+<br>
+		<div class="status">
+			<%
+				if (request.getAttribute("Message") != null)
+					out.print(request.getAttribute("Message"));
+			%>
+		</div>
 
+</form>
+ <br>
+	<div class="wrapper">
+		<a href="MentorHome.jsp"><button type="button">Home</button></a>
+	</div>
 
 </body>
 </html>

@@ -47,10 +47,8 @@ public class ViewModule extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		
-		//HttpSession session = request.getSession(false);
-		//int eid=(int)session.getAttribute("eId");
 		String batchId = request.getParameter("batchId");
-		//System.out.println(batchId);
+	
 		PrintWriter out = response.getWriter();
 		out.println("<h1>Module</h1>");
 
@@ -68,6 +66,8 @@ public class ViewModule extends HttpServlet {
 			out.println("<tr><td>"+b1.getMoId()+"</td><td>"+b1.getModuleName()+"</td><td>"+date+"</td></tr>");
 		}
 		out.println("</table>");
+		out.print("<br>");
+		out.println("<a href='" + getServletContext().getContextPath() + "/LPHome.jsp'>Home</a>"); 
 		out.close();
 
 	}

@@ -38,7 +38,7 @@ public class VenueDaoImp implements VenueDao
 			int i= ps.executeUpdate();
 			
 			if (i!=0)  
-			return "SUCCESS"; 
+			return "successfully done...."; 
 		}
 		catch(SQLException e)
 		{

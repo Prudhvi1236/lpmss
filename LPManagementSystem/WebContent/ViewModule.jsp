@@ -5,8 +5,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>view module</title>
+<style type="text/css">
+.wrapper {
+	text-align: center;
+}
+</style>
 </head>
-<body>
+<body bgcolor="#afafaf">
+<h2 align="center">Module Details</h2>
 <form name="batch" action="ViewModule" method="post" >
 <table align="center">
 <tr>
@@ -18,18 +24,13 @@
 <td><input type="submit" value="view module"></input>
 <input type="reset" value="Reset"></input></td>
 </tr>
-<tr><td><br></td></tr>
-<tr> 
-<td></td>
-<td><span style="color:red">
-<%=(request.getAttribute("errMessage") == null) ? "": request.getAttribute("errMessage")%>
-</span></td>
-</tr>
-
 
 </table>
 </form>
-
+<br>
+<div class="wrapper">
+		<a href="LPHome.jsp"><button type="button">Home</button></a>
+	</div>
 
 
 </body>

@@ -54,13 +54,14 @@ public class AddVenue extends HttpServlet {
 		AdminService registerDao = new AdminServiceImp();
 	
 		String userRegistered = registerDao.addVenue(registerBean);
-		if(userRegistered.equals("SUCCESS"))   //On success, you can display a message to user on Home page
+		if(userRegistered.equals("successfully done...."))   //On success, you can display a message to user on Home page
 		{
+			request.setAttribute("Message", userRegistered);
 		request.getRequestDispatcher("/AddVenue.jsp").forward(request, response);
 		}
 		else   //On Failure, display a meaningful message to the User.
 		{
-		request.setAttribute("errMessage", userRegistered);
+		request.setAttribute("Message", userRegistered);
 		request.getRequestDispatcher("/AddVenue.jsp").forward(request, response);
 		}
 		

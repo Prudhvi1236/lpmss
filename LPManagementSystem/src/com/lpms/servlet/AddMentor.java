@@ -53,7 +53,7 @@ public class AddMentor extends HttpServlet {
 		AdminService registerDao = new AdminServiceImp();
 	
 		String userRegistered = registerDao.addMentor(registerBean);
-		if(userRegistered.equals("SUCCESS"))   //On success, you can display a message to user on Home page
+		if(userRegistered.equals("successfully done...."))   //On success, you can display a message to user on Home page
 		{
 		request.setAttribute("Message", userRegistered);
 		request.getRequestDispatcher("/AddMentor.jsp").forward(request, response);

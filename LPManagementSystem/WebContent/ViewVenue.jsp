@@ -5,10 +5,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>course and venue details</title>
+<style type="text/css">
+.wrapper {
+	text-align: center;
+}
+</style>
 </head>
-<body>
-
+<body bgcolor="#afafaf">
 <form name="venue" action="ViewVenue" method="Get" >
+<h2 align="center">Venue Details</h2>
 <table align="center">
 <tr>
 <td>Batch Id</td>
@@ -16,22 +21,14 @@
 </tr>
 <tr>
 <td></td>
-<td><input type="submit" value="view venue"></input>
-<input type="reset" value="Reset"></input></td>
+<td><input type="submit" value="view venue">
+<input type="reset" value="Reset"></td>
 </tr>
-<tr><td><br></td></tr>
-<tr> 
-<td></td>
-<td><span style="color:red">
-<%=(request.getAttribute("errMessage") == null) ? "": request.getAttribute("errMessage")%>
-</span></td>
-</tr>
-
-
 </table>
 </form>
-
-
-
+<br>
+<div class="wrapper">
+		<a href="LPHome.jsp"><button type="button">Home</button></a>
+	</div>
 </body>
 </html>

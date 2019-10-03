@@ -5,35 +5,80 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Add Venue</title>
+<style type="text/css">
+.wrapper {
+	text-align: center;
+}
+
+h3 {
+	color: black;
+}
+.status{
+text-align:center;
+color:red;
+font-size:25px;
+
+}
+</style>
+
 </head>
-<body>
+<body bgcolor="#afafaf">
+<script>
+		function validateForm() {
+			var venueid = document.venueRegistration.venueid.value;
+			var vaddress = document.venueRegistration.venueaddress.value;
+			var vcapacity = document.venueRegistration.capacity.value;
+			
+			if (venueid == "" || venueid == null) {
+				alert("venue id can't be blank");
+				return false;
+			} else if (vaddress == null || vaddress == "") {
+				alert("venue address can't be blank");
+				return false;
+			} else if (vcapacity == null || vcapacity == "") {
+				alert("venue capacity can't be blank");
+				return false;
+			} 
 
+		}
+	</script>
 
-<div class=heading>
+<div>
 <h3 align="center">Add Venue</h3>
 </div>
 
-<form name="venueRegistration" action="AddVenue" method="post" ">
+<form name="venueRegistration" action="AddVenue" method="post" onsubmit="return validateForm()">
 <table align="center">
 <tr>
 <td>VenueId</td>
-<td><input type="text" name="venueid" required="required" placeholder="Enter venue id"/></td>
+<td><input type="text" name="venueid"  placeholder="Enter venue id"/></td>
 </tr>
 <tr>
 <td>Address</td>
-<td><input type="text" name="venueaddress" required="required" placeholder="Enter address"/></td>
+<td><input type="text" name="venueaddress"  placeholder="Enter address"/></td>
 </tr>
 <tr>
 <td>Capacity</td>
-<td><input type="text" name="capacity" required="required" placeholder="Enter capacity"/></td>
+<td><input type="text" name="capacity"  placeholder="Enter capacity"/></td>
 </tr>
 <tr>
 <td></td>
-<td><input type="submit" value="Register"></input><input
-type="reset" value="Reset"></input></td>
+<td><input type="submit" value="Register">
+<input type="reset" value="Reset"> </td>
 </tr>
 </table>
+<br>
+		<div class="status">
+			<%
+				if (request.getAttribute("Message") != null)
+					out.print(request.getAttribute("Message"));
+			%>
+		</div>
 </form>
+<br>
+	<div class="wrapper">
+		<a href="AdminHome.jsp"><button type="button">Home</button></a>
+	</div>
 
 
 

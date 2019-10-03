@@ -49,7 +49,7 @@ public class BatchDaoImp implements BatchDao {
 			ps.setInt(4, batchcapacity);
 
 			i = ps.executeUpdate();
-			System.out.println(batchid);
+			//System.out.println(batchid);
 			return "SUCCESS";
 			}
 			else
@@ -66,7 +66,7 @@ public class BatchDaoImp implements BatchDao {
 	}
 
 	@Override
-	public Batch allocateVenue(Batch b) {
+	public String allocateVenue(Batch b) {
 
 		 Connection con=null;
 		  PreparedStatement ps= null;
@@ -80,17 +80,17 @@ public class BatchDaoImp implements BatchDao {
 		    ps=con.prepareStatement(query);
 			ps.setString(2,b.getBatchId());
 			ps.setInt(1,b.getVenueId());
-			ps.executeUpdate();
-
-			con.commit();
-			con.close();
+			int i=ps.executeUpdate();
+			return "successfully done....";
+			
+			
 			}
 		
 		catch(SQLException e)
 		{
 			e.printStackTrace();
 		}
-		return b ;
+		return "Oops error occurred" ;
 
 		
 	}
@@ -103,7 +103,7 @@ public class BatchDaoImp implements BatchDao {
 
 		List<Batch> batchlist = new ArrayList();
 		StartConnection s = new StartConnection();
-		String query = "select * from batchrecords where venueid is not null";
+		String query = "select * from batchrecords";
 		try {
 			con = StartConnection.createConnection();
 			PreparedStatement ps = con.prepareStatement(query);
@@ -182,7 +182,7 @@ public class BatchDaoImp implements BatchDao {
 		PreparedStatement ps = null;
 		ResultSet resultSet = null;
 		Statement st = null;
-		String query = "select batchcourse,batchrecords.venueid,venueaddress from batchrecords right join venue on batchrecords.venueid = venue.venueid where batchid='"+batchId+"'";
+		String query = "select batchcourse,batch.venueid,venueaddress from batch right join venue on batch.venueid = venue.venueid where batchid='"+batchId+"'";
 		try {
 			Batch batchbean = null;
 
@@ -307,7 +307,7 @@ public class BatchDaoImp implements BatchDao {
 	}
 
 	@Override
-	public Batch deleteBatch(Batch b) 
+	public boolean deleteBatch(Batch b) 
 	{
 		
 		Connection con=null;
@@ -322,9 +322,11 @@ public class BatchDaoImp implements BatchDao {
 		    ps=con.prepareStatement(query);
 			ps.setString(2,b.getBatchId());
 			ps.setString(1,b.geteId());
-			ps.executeUpdate();
-
-			con.commit();
+			if( ps.executeUpdate()==1) {
+				return true;
+			}
+			
+			
 			con.close();
 			}
 		
@@ -332,7 +334,7 @@ public class BatchDaoImp implements BatchDao {
 		{
 			e.printStackTrace();
 		}
-		return b ;
+		return false;
 
 		
 	}

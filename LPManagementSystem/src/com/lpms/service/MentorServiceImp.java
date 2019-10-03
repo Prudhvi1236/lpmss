@@ -56,7 +56,7 @@ public class MentorServiceImp implements MentorService
 	}
 
 	@Override
-	public Batch deleteBatch(Batch b) {
+	public boolean deleteBatch(Batch b) {
 		
 		return bd.deleteBatch(b);
 	}

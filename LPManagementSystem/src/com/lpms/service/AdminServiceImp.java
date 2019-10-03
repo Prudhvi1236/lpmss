@@ -31,7 +31,7 @@ public class AdminServiceImp implements AdminService
 	}
 
 	@Override
-	public Batch allocateVenue(Batch b)
+	public String allocateVenue(Batch b)
 	{
 		return bd.allocateVenue(b);
 	}

@@ -5,6 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<style type="text/css">
+.wrapper {
+	text-align: center;
+}
+</style>
 </head>
 <body>
 <%
@@ -30,6 +35,8 @@
  }
 %>
 
-
+<div class="wrapper">
+		<a href="MentorHome.jsp"><button type="button">Home</button></a>
+	</div>
 </body>
 </html>

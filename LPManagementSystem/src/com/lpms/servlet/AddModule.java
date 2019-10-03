@@ -58,13 +58,14 @@ public class AddModule extends HttpServlet {
 		MentorService registerDao = new MentorServiceImp();
 	
 		String userRegistered = registerDao.createModule(registerBean);
-		if(userRegistered.equals("SUCCESS"))   //On success, you can display a message to user on Home page
+		if(userRegistered.equals("successfully done...."))   
 		{
-		request.getRequestDispatcher("/AddModule.jsp").forward(request, response);
+			request.setAttribute("Message", userRegistered);
+			request.getRequestDispatcher("/AddModule.jsp").forward(request, response);
 		}
-		else   //On Failure, display a meaningful message to the User.
+		else  
 		{
-		request.setAttribute("errMessage", userRegistered);
+		request.setAttribute("Message", userRegistered);
 		request.getRequestDispatcher("/AddModule.jsp").forward(request, response);
 		}
 		

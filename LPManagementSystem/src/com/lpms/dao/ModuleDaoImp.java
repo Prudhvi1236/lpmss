@@ -41,7 +41,7 @@ public class ModuleDaoImp implements ModuleDao {
 			int i = ps.executeUpdate();
 
 			if (i != 0)
-				return "SUCCESS";
+				return "successfully done....";
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -53,7 +53,7 @@ public class ModuleDaoImp implements ModuleDao {
 	public List<Module> viewModule(String batchId) {
 
 		Connection con = null;
-		PreparedStatement stmt = null;
+		
 		ResultSet resultSet = null;
 		StartConnection s = new StartConnection();
 		List<Module> modulelist = new ArrayList();
@@ -65,7 +65,7 @@ public class ModuleDaoImp implements ModuleDao {
 			ps.setString(1, batchId);
 
 			resultSet = ps.executeQuery();
-			log.trace("this is ");
+			
 			while (resultSet.next()) {
 				v = new Module();
 				v.setMoId(resultSet.getInt(1));
@@ -76,7 +76,8 @@ public class ModuleDaoImp implements ModuleDao {
 				log.debug("moid" + resultSet.getInt(1));
 				modulelist.add(v);
 			}
-			//System.out.println(modulelist);
+			
+			
 			con.close();
 
 		} catch (SQLException e) {

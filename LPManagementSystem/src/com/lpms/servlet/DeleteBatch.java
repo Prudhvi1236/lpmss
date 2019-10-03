@@ -46,9 +46,14 @@ public class DeleteBatch extends HttpServlet {
           batchbean.setBatchId(batchid);
           batchbean.seteId(eid);
           MentorService mentorservice = new MentorServiceImp();
-    	 mentorservice.deleteBatch(batchbean);
+    	if( mentorservice.deleteBatch(batchbean)) {
+    		response.getWriter().println("Deleted succesfully<a href='MentorHome.jsp'> Go back to Home</a>");
+//    		request.getRequestDispatcher("/DeleteBatch.jsp").forward(request, response);	
+    	}else {
+    		response.getWriter().println("Deleted Failed <a href='DeleteBatch.jsp'> Try again</a>");	
+    	}
         
- 		request.getRequestDispatcher("/DeleteBatch.jsp").forward(request, response);
+ 		
 
 		
 	}

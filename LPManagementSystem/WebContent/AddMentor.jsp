@@ -25,7 +25,7 @@
 }
 
 h3 {
-	color: Blue;
+	color: black;
 }
 .status{
 text-align:center;
@@ -40,6 +40,15 @@ font-size:25px;
 		<h3 align="center">Add Mentor</h3>
 	</div>
 	<script>
+	function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        if (charCode != 46 && charCode > 31 &&
+            (charCode < 48 || charCode > 57)) {
+            alert("Enter Number");
+            return false;
+        }
+        return true;
+}
 		function validateForm() {
 			var empid = document.add.eid.value;
 			var email = document.add.email.value;
@@ -70,7 +79,7 @@ font-size:25px;
 	</script>
 	<form name="add" action="AddMentor" method="post"
 		onsubmit="return validateForm()">
-		<table align="center" border="3px">
+		<table align="center">
 			<tr>
 				<td>Empid</td>
 				<td><input type="text" name="eid" placeholder="Enter id"></td>
@@ -86,8 +95,8 @@ font-size:25px;
 			</tr>
 			<tr>
 				<td>Phone Number</td>
-				<td><input type="number" name="phno"
-					placeholder="Enter phone number"></td>
+				<td><input type="text" name="phno"
+					placeholder="Enter phone number" onkeypress="return isNumberKey(event)"></td>
 			</tr>
 			<tr>
 				<td>Password</td>
@@ -95,8 +104,9 @@ font-size:25px;
 					placeholder="Enter password"></td>
 			</tr>
 			<tr>
-				<td><input type="submit" value="Register"></td>
-				<td><input type="reset" value="Reset"></td>
+			<td></td>
+				<td><input type="submit" value="Register">
+				<input type="reset" value="Reset"></td>
 			</tr>
 		</table>
 		<br>
