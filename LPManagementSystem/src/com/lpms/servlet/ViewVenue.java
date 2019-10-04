@@ -44,13 +44,14 @@ public class ViewVenue extends HttpServlet {
 		String batchId = request.getParameter("batchId");
 		//System.out.println(batchId);
 		PrintWriter out = response.getWriter();
-		out.println("<h1>Venue and course details</h1>");
+		
 
 		
 		LPService impl = new LPServiceImp();
 		Batch batch=impl.findByBatchId(batchId);
-		
-		
+		if(batch!=null)
+		{
+			out.println("<h1>Venue and course details</h1>");
 		out.println("<table border='1' width='80%'>");
 		out.println("<tr><th>Batch Course</th><th>Venue Address</th></tr>");
 	
@@ -62,7 +63,12 @@ public class ViewVenue extends HttpServlet {
 		out.print("<br>");
 		out.println("<a href='" + getServletContext().getContextPath() + "/LPHome.jsp'>Home</a>"); 
 		out.close();
-
+		}
+		else
+		{
+			out.println("<h1>Venue not allocated</h1>");
+			out.println("<a href='" + getServletContext().getContextPath() + "/LPHome.jsp'>Home</a>"); 
+		}
 		
 	}
 

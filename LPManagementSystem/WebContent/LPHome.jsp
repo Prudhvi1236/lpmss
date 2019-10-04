@@ -21,7 +21,11 @@ details
 display: block;
 margin-left: 5%;
 }
-
+ summary { 
+                font-size:20px; 
+                color:#17202A; 
+                font-weight:bold; 
+            } 
 
 /* Add a black background color to the top navigation */
 .topnav {
@@ -59,7 +63,7 @@ margin-left: 5%;
 </style>
 </head>
 <body>
-<h1 align="center">LP Management System</h1>
+<h1 align="center">LP Batch Management System</h1>
  
  <hr>
 <div class="topnav">
@@ -70,7 +74,7 @@ margin-left: 5%;
   <a href="Logout">Logout</a>
 </div>
 <br>
-<h3><u>What is the process?</u></h3>
+<h2><u>What is the process?</u></h2>
 <details>
 <summary>After onboarding</summary>
 <p>Once you onboarded in virtusa you are added in a batch and a training is given under certain period of time on particular course.</p>
@@ -91,6 +95,10 @@ margin-left: 5%;
 <p>Step3 : Add start date and end date for outside trainings. If required add comments.</p>
 <p>Step4 : Enter save and submit.</p>
 </p>
+</details>
+<details>
+<summary>Advanced Training</summary>
+<p>Advanced training will be given to the particular batches or particular candidates. The advanced training process is similar to the basic training program which contains tasks, exams etc.,</p>
 </details>
 
 

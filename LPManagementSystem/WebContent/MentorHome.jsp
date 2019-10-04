@@ -20,6 +20,16 @@ response.setHeader("Expries", "0");
 <title>Mentor</title>
 
 <style>
+details
+{
+display: block;
+margin-left: 5%;
+}
+ summary { 
+                font-size:20px; 
+                color:#17202A; 
+                font-weight:bold; 
+            } 
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: #2874A6;
@@ -59,27 +69,53 @@ response.setHeader("Expries", "0");
 
 </head>
 <body>
-<h1 align="center">LP Management System</h1>
+<h1 align="center">LP Batch Management System</h1>
  
 <div class="topnav">
   
   <a href="AddLP.jsp">Add LP</a>
   <a href="Batch.jsp">Create Batch</a>
-  <a href="<%=request.getContextPath() %>/ViewBatch">View Batch</a>
+  <a href="<%=request.getContextPath() %>/ViewBatch">View Venue</a>
   <a href="<%=request.getContextPath() %>/ViewMentorProfile">View Profile</a>
   <a href="AddModule.jsp">create module</a>
+  <a href="ViewMentorModule.jsp">view module</a>
   <a href="DeleteBatch.jsp">Delete batch</a>
   <a href="Logout">Logout</a>
 </div>
 <br>
 
-<div class= "welcome">
-<h2>welcome Mentor!!</h2>
-</div>
 
 
-
-
+<br>
+<h2><u>What does mentor do?</u></h2>
+<details>
+<summary>Register LP</summary>
+<p>Once mentor get LP list register them in LP batch management portal and add them into a batch.</p>
+</details>
+<details>
+<summary>Batch creation</summary>
+<p>After completion of LP's enrolling mentor needs create a batch and mentor needs to add them into the batch. </p>
+</details>
+<details>
+<summary>Module creation</summary>
+<p>For a particular batch a particular module is assigned which contains day wise topics with dates and the module is created based upon the batch course.</p>
+</details>
+<details>
+<summary>Batch deletion</summary>
+<p>After completion of batch training mentor can delete the batch which was assigned for the training.</p>
+</details>
+<details>
+<summary>View profile</summary>
+<p>Mentor can view his profile by clicking on the view profile on the menu bar.</p>
+</details>
+<details>
+<summary>View Venue</summary>
+<p>Mentor can view his venue and batch details which is undergoing in training program by clicking on the view venue on the menu bar.</p>
+</details>
+<details>
+<summary>View Module</summary>
+<p>Mentor can view the module for a particular batch which is in training program by clicking on the view module on the menu bar.</p>
+</details>
 
 
 

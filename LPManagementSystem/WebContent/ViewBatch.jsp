@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>view batch</title>
+<title>view venue</title>
 <style type="text/css">
 .wrapper {
 	text-align: center;
@@ -16,9 +16,13 @@
 </style>
 </head>
 <body bgcolor="#2874A6">
-<h2 align="center">Batch</h2>
+<h2 align="center">venue</h2>
+<%Batch emp=(Batch)request.getAttribute("employee");
+ if(emp!=null)
+ {
+%>
 <table width="50%" border="2" align="center">
-<%request.getAttribute("employee"); %>
+
   <tr >
     <th bgcolor="#B3B6B7"scope="col">Employee Id </th>
     <td   bgcolor="white"><c:out value="${employee.eId }"/></td>
@@ -40,7 +44,15 @@
     <td bgcolor="white"><c:out value="${employee.venue.venueAddress }"/></td>
      </tr>
     
- 
+ <%
+ }
+ else
+ {
+ %>
+ <h1 align="center">venue not allocated</h1>
+ <%
+ }
+ %>
    
 </table> 
 <br>

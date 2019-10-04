@@ -9,5 +9,6 @@ public interface ModuleDao
 {
 	String createModule(Module mo);
 	public List<Module> viewModule(String batchId);
+	List<Module> viewMentorModule(String batchId);
 
 }

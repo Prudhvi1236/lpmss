@@ -21,6 +21,7 @@ font-size:25px;
 }
 </style>
 </head>
+<%String eid = (String) session.getAttribute("eId"); %>
 <body>
 
 <body bgcolor="#afafaf">
@@ -62,7 +63,7 @@ font-size:25px;
 </tr>
 <tr>
 <td>MentorId</td>
-<td><input type="text" name="eid"  placeholder="Enter mentor id"/></td>
+<td><input type="text" name="eid" value=<%=eid%> placeholder="Enter mentor id" readonly/></td>
 </tr>
 <tr>
 <td>BatchCapacity</td>

@@ -6,7 +6,7 @@
   </welcome-file-list>
   <servlet>
     <servlet-name>log</servlet-name>
-    <servlet-class>com.lpms.service.LoginServlet</servlet-class>
+    <servlet-class>com.lpms.servlet.LoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>log</servlet-name>
@@ -14,7 +14,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>mentorlog</servlet-name>
-    <servlet-class>com.lpms.service.MLoginServlet</servlet-class>
+    <servlet-class>com.lpms.servlet.MLoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>mentorlog</servlet-name>
@@ -22,7 +22,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>LPlog</servlet-name>
-    <servlet-class>com.lpms.service.LPLogServlet</servlet-class>
+    <servlet-class>com.lpms.servlet.LPLogServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LPlog</servlet-name>

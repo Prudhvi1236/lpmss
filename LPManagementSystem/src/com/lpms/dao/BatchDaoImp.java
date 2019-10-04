@@ -29,7 +29,7 @@ public class BatchDaoImp implements BatchDao {
 		int batchcapacity = b.getBatchCapacity();
 
 		Connection con = null;
-		PreparedStatement stmt = null;
+	
 		ResultSet resultSet = null;
 		String query = "insert into batch (batchid,batchcourse,eid,batchcapacity)values(?,?,?,?)";
 		StartConnection s = new StartConnection();
@@ -38,7 +38,7 @@ public class BatchDaoImp implements BatchDao {
 			PreparedStatement ps = con.prepareStatement("select * from batch where eid=?");
 			ps.setString(1,eid);
 			resultSet=ps.executeQuery();
-			System.out.println("hello"+resultSet.next()+eid);
+			//log.trace("hello"+resultSet.next()+eid);
 			if(resultSet.next()==false)
 			{
 			ps = con.prepareStatement(query);
@@ -49,7 +49,7 @@ public class BatchDaoImp implements BatchDao {
 			ps.setInt(4, batchcapacity);
 
 			i = ps.executeUpdate();
-			//System.out.println(batchid);
+			
 			return "SUCCESS";
 			}
 			else
@@ -292,9 +292,9 @@ public class BatchDaoImp implements BatchDao {
 				Batch b = new Batch();
 				b.setBatchId(resultSet.getString(1));
 				b.setBatchCourse(resultSet.getString(2));
-				b.seteId(resultSet.getString(3));
+				b.seteId(resultSet.getString(5));
 				b.setVenueId(resultSet.getInt(4));
-				b.setBatchCapacity(resultSet.getInt(5));
+				b.setBatchCapacity(resultSet.getInt(3));
 				batchlist.add(b);
 			}
 			con.close();

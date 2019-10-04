@@ -202,7 +202,7 @@ public class LPDaoImp implements LPDao {
 			ps.setString(3, lp.getPassword());
 			ps.setLong(4, lp.getPhno());
 
-			ps.executeQuery();
+			ps.executeUpdate();
 			ps.close();
 
 			System.out.print("User with id " + lp.getEmail() + " was updated");

@@ -15,15 +15,64 @@
 }
 
 </style>
+<script>
+function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode;
+            if (charCode != 46 && charCode > 31 &&
+                (charCode < 48 || charCode > 57)) {
+                alert("Enter Number");
+                return false;
+            }
+            return true;
+}
+function validate()
+{
+	;
+	var email = document.emp.email.value;
+	var username = document.emp.name.value;
+	var password = document.emp.password.value;
+	var phno = document.emp.phno.value;
+	
+	
+	 if(username==null||username=="")
+	{
+	alert("username can't be blank");
+	return false;
+	}
+	else if(email==null||email=="")
+	{
+	alert("email can't be blank");
+	return false;
+	}
+	
+	else if(phno.length<10)
+	{
+	alert("please enter valid phone number");
+	return false;
+	}
+	else if(phno.length>10)
+	{
+	alert("please enter valid phone number");
+	return false;
+	}
+	else if(password==null||password=="")
+	{
+	alert("password can't be blank");
+	return false;
+	}
+	
+}
+
+</script>
 </head>
 <body bgcolor="#afafaf">
-<%LP l=new LP();
+<%LP lp=new LP();
 LPServiceImp lpi=new LPServiceImp();
 String eId=request.getParameter("eId");
-LP l2=lpi.findById(eId);
+ lp=lpi.findById(eId);
 
 request.getAttribute("employee"); %>
-<form name="emp" action="UpdateProfile" method="post">
+<form name="emp" action="UpdateProfile" method="post"onsubmit="return validate()">
         <table  bgcolor="white"align="center" width=40% cellspacing="2" cellpadding="2" border="5" >
         
             <tr>
@@ -32,30 +81,30 @@ request.getAttribute("employee"); %>
             </tr>
 			<tr>
             	<td>
-            	<input type="hidden" name="eId" value="<%= l2.geteId() %>">
+            	<input type="hidden" name="eId" value="<%= lp.geteId() %>">
           	  </td>
           	  <td></td>
             </tr>
 			<tr>
                 <td align="left" valign="top" width="41%">Employee name<span style="color:red"></span></td>
  
-                <td width="57%"><input type="text" value="<%=l2.getName() %>" name="name" size="24"></td>
+                <td width="57%"><input type="text" value="<%=lp.getName() %>" name="name" size="24"></td>
             </tr>	
             
 			<tr>
                 <td align="left" valign="top" width="41%">Email Id<span style="color:red"></span></td>
                 <td width="57%">
-                    <input type="text" value="<%= l2.getEmail() %>" name="email" size="24" ></td>
+                    <input type="text" value="<%= lp.getEmail() %>" name="email" size="24" ></td>
             </tr>
             <tr>
                 <td align="left" valign="top" width="41%">Phone number<span style="color:red"></span></td>
                 <td width="57%">
-                    <input type="text" value="<%= l2.getPhno() %>" name="phno" size="24"readonly></td>
+                    <input type="text" value="<%= lp.getPhno() %>" name="phno" size="24"></td>
             </tr>
             <tr>
                 <td align="left" valign="top" width="41%">Password<span style="color:red"></span></td>
                 <td width="57%">
-                    <input type="text" value="<%= l2.getPassword() %>" name="password" size="24"></td>
+                    <input type="text" value="<%= lp.getPassword() %>" name="password" size="24"></td>
             </tr>
              <tr>
                 <td colspan="2">

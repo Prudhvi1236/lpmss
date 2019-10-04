@@ -47,10 +47,10 @@ public class GetNotAllocBatchRecords extends HttpServlet {
 		List<Batch> list= as. getNotAllocBatchRecords();
 		
 		out.println("<table border='1' width='80%'>");
-		out.println("<tr><th>BatchId</th><th>BatchCourse</th><th>MentorId</th><th>VenueId</th><th>capacity</th></tr>");
+		out.println("<tr><th>BatchId</th><th>BatchCourse</th><th>capacity</th><th>VenueId</th><th>MentorId</th></tr>");
 		for(Batch b1:list)
 		{
-			out.println("<tr><td>"+b1.getBatchId()+"</td><td>"+b1.getBatchCourse()+"</td><td>"+b1.geteId()+"</td><td>"+b1.getVenueId()+"</td><td>"+b1.getBatchCapacity()+"</td></tr>");
+			out.println("<tr><td>"+b1.getBatchId()+"</td><td>"+b1.getBatchCourse()+"</td><td>"+b1.getBatchCapacity()+"</td><td>"+b1.getVenueId()+"</td><td>"+b1.geteId()+"</td></tr>");
 		}
 		out.println("</table>");
 		out.println("<a href='" + getServletContext().getContextPath() + "/AdminHome.jsp'>Home</a>"); 

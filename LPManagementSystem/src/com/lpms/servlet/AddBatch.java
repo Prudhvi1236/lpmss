@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.lpms.model.Batch;
 import com.lpms.service.MentorService;
@@ -38,11 +39,12 @@ public class AddBatch extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		HttpSession session=request.getSession();
 		String batchid =request.getParameter("batchid");
 		String batchcourse =request.getParameter("batchcourse");
-		String eid = request.getParameter("eid");
+		String eid = (String) session.getAttribute("eId");
 		int batchcapacity=Integer.parseInt(request.getParameter("batchcapacity"));
+		
 		
 		Batch registerBean = new Batch();
 	
@@ -56,7 +58,7 @@ public class AddBatch extends HttpServlet {
 		String userRegistered= registerDao.addBatch(registerBean);
 		System.out.print(userRegistered);
 		String userRegistered1 = registerDao.batchRecords(registerBean);
-		System.out.print(userRegistered);
+		
 		request.setAttribute("msg",userRegistered);
 		request.getRequestDispatcher("/BatchMessage.jsp").forward(request, response);
 		/*if(userRegistered.equals("SUCCESS"))   //On success, you can display a message to user on Home page

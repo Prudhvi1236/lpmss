@@ -1,6 +1,7 @@
-package com.lpms.service;
+package com.lpms.servlet;
 
 import java.io.IOException;
+
 import java.io.PrintWriter;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 
 import com.lpms.model.Venue;
+import com.lpms.service.LoginService;
 
 
 public class LoginServlet extends HttpServlet{
@@ -41,10 +43,7 @@ public class LoginServlet extends HttpServlet{
 			HttpSession session= request.getSession();
 			session.setAttribute("eId",eid);
 			
-			//AdminService adminservice= new AdminServiceImp();
-			//List<Venue> list=adminservice.viewVenue();
-			//request.setAttribute("list", list);
-			//log.trace("venue from db:"+list);
+			
 			
 			request.getRequestDispatcher("/AdminHome.jsp").forward(request, response);
 		}

@@ -1,6 +1,7 @@
-package com.lpms.service;
+package com.lpms.servlet;
 
 import java.io.IOException;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +11,8 @@ import javax.servlet.http.HttpSession;
 
 import com.lpms.dao.LPDaoImp;
 import com.lpms.model.LP;
+import com.lpms.service.LPService;
+import com.lpms.service.LPServiceImp;
 
 
 public class LPLogServlet extends HttpServlet{

@@ -44,7 +44,7 @@ public class UpdateProfile extends HttpServlet {
 	    response.setContentType("text/html");
 	    
 		HttpSession session = request.getSession(false);
-		String eId= request.getParameter("eId");
+		String eId= (String) session.getAttribute("eId");
 	    
 		String name=request.getParameter("name");
 	
@@ -57,10 +57,10 @@ public class UpdateProfile extends HttpServlet {
 		LPService impl = new LPServiceImp();
 		
 		LP updated = impl.updateProfile(emp);
-		pw.print("servlet");
+		
 		if(updated!=null)
 		{
-			pw.print("Details Updated");
+			pw.println("Details Updated");
 			pw.print("<a href=\"LPHome.jsp\">Click Here to Go to Home Page</a>");
 		}
 		else

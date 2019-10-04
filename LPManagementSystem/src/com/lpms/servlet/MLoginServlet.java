@@ -1,4 +1,4 @@
-package com.lpms.service;
+package com.lpms.servlet;
 
 import java.io.IOException;
 
@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.lpms.model.Mentor;
+import com.lpms.service.MentorService;
+import com.lpms.service.MentorServiceImp;
 public class MLoginServlet extends HttpServlet {
 
 	/**

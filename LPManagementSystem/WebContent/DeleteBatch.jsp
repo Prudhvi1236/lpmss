@@ -21,6 +21,7 @@ font-size:25px;
 }
 </style>
 </head>
+<%String eid = (String) session.getAttribute("eId"); %>
 <body bgcolor="#afafaf">
 
 <h3 align="center">Delete Batch</h3>
@@ -49,11 +50,7 @@ font-size:25px;
 <tr>
 <tr>
 <td>MentorId</td>
-<td><input type="text" name="eId"  placeholder="Enter mentor id"/></td>
-</tr>
-<tr>
-<td><%=(request.getAttribute("errMessage") == null) ? ""
-: request.getAttribute("errMessage")%></td>
+<td><input type="text" name="eId" value=<%=eid%> placeholder="Enter mentor id" readonly/></td>
 </tr>
 <tr>
 <td></td>

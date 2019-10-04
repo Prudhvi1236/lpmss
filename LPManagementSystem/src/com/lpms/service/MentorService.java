@@ -1,5 +1,7 @@
 package com.lpms.service;
 
+import java.util.List;
+
 import com.lpms.model.Batch;
 import com.lpms.model.LP;
 import com.lpms.model.Mentor;
@@ -16,4 +18,5 @@ public interface MentorService
 	public boolean deleteBatch(Batch b) ;
 	public Mentor findById(String eId);
 	public Batch findByMenId(String eId);
+	public List<Module> viewMentorModule(String batchId);
 }

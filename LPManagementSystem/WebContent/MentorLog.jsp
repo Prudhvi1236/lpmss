@@ -52,7 +52,7 @@ padding:50px;
 </head>
 <body>
 
-<h1 align="center">LP Management System</h1>
+<h1 align="center">LP Batch Management System</h1>
 
 <div class="topnav">
   

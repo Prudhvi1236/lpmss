@@ -87,5 +87,42 @@ public class ModuleDaoImp implements ModuleDao {
 
 	}
 
+	@Override
+	public List<Module> viewMentorModule(String batchId) {
+Connection con = null;
+		
+		ResultSet resultSet = null;
+		StartConnection s = new StartConnection();
+		List<Module> modulelist = new ArrayList();
+		String query = "select * from module where batchid=? ";
+		Module v = null;
+		try {
+			con = StartConnection.createConnection();
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setString(1, batchId);
+
+			resultSet = ps.executeQuery();
+			
+			while (resultSet.next()) {
+				v = new Module();
+				v.setMoId(resultSet.getInt(1));
+				log.debug("moid" + resultSet.getInt(1));
+
+				v.setModuleName(resultSet.getString(2));
+				v.setDate(resultSet.getString(3));
+				log.debug("moid" + resultSet.getInt(1));
+				modulelist.add(v);
+			}
+			
+			
+			con.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return modulelist;
+
+	}
+
 	
 }

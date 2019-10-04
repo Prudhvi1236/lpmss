@@ -1,5 +1,7 @@
 package com.lpms.service;
 
+import java.util.List;
+
 import com.lpms.dao.BatchDao;
 import com.lpms.dao.BatchDaoImp;
 import com.lpms.dao.LPDao;
@@ -71,6 +73,12 @@ public class MentorServiceImp implements MentorService
 	public Batch findByMenId(String eId) {
 		
 		return bd.findByMenId(eId);
+	}
+
+	@Override
+	public List<Module> viewMentorModule(String batchId) {
+		// TODO Auto-generated method stub
+		return mod.viewMentorModule(batchId);
 	}
 	
 
